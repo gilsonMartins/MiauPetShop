@@ -6,10 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destaques"
+        app:layout_constraintBottom_toBottomOf="@+id/slideShow"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/slideShow"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100ssp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,9 +27,7 @@
         app:sliderIndicatorAnimationDuration="600"
         app:sliderIndicatorGravity="center|center_horizontal"
         app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="@dimen/_1ssp"
-        app:sliderIndicatorRadius="@dimen/_15ssp"
-        app:sliderIndicatorSelectedColor="@color/black"
+        app:sliderIndicatorRadius="@dimen/_1ssp"
         app:sliderScrollTimeInSec="2"
         app:sliderStartAutoCycle="true" />
 
