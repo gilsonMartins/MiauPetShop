@@ -8,6 +8,7 @@
     tools:context=".ui.login.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_30ssp"
@@ -22,11 +23,11 @@
         android:id="@+id/appCompatButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10ssp"
-        android:textColor="@drawable/botao_vermelho"
         android:layout_marginHorizontal="@dimen/_50ssp"
+        android:layout_marginTop="@dimen/_10ssp"
         android:background="@drawable/botao_inverso"
         android:text="Criar conta"
+        android:textColor="@drawable/botao_vermelho"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,13 +38,50 @@
         android:id="@+id/appCompatButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@drawable/botao_vermelho"
         android:layout_marginHorizontal="@dimen/_50ssp"
         android:background="@drawable/background_buttom"
         android:text="Entrar"
+        android:textColor="@drawable/botao_vermelho"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_50ssp"
+        android:background="@drawable/background_input_text"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="65dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Login" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_50ssp"
+        android:layout_marginTop="@dimen/_15ssp"
+        android:background="@drawable/background_input_text"
+        android:visibility="gone"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Senha"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
