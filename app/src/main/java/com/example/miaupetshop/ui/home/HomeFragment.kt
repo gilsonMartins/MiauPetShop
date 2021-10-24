@@ -10,29 +10,52 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.miaupetshop.R
 import com.example.miaupetshop.databinding.FragmentHomeBinding
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    lateinit var slideShow: SliderView
+    private var images = intArrayOf(
+        R.drawable.exemplo,
+        R.drawable.exmplo2,
+        R.drawable.exmeplo3
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
-        return root
+        imgensAdapter()
+    }
+
+    private fun imgensAdapter() {
+        slideShow = binding.slideShow
+
+        val adapter = SlideAdapter(images)
+
+        slideShow.setSliderAdapter(adapter)
+        slideShow.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        slideShow.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+        slideShow.startAutoCycle()
     }
 
     override fun onDestroyView() {

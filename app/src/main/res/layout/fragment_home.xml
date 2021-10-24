@@ -6,17 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/slideShow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="center|center_horizontal"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="@dimen/_1ssp"
+        app:sliderIndicatorRadius="@dimen/_15ssp"
+        app:sliderIndicatorSelectedColor="@color/black"
+        app:sliderScrollTimeInSec="2"
+        app:sliderStartAutoCycle="true" />
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
