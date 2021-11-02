@@ -33,7 +33,7 @@
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
             android:text="Home"
-            android:textSize="@dimen/_24ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="wrap_content"

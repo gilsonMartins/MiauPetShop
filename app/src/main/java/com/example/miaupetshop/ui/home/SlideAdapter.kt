@@ -15,7 +15,7 @@ class SlideAdapter(images: IntArray): SliderViewAdapter<SlideAdapter.Holder>() {
     var images: IntArray = images
 
 
-    override fun onCreateViewHolder(parent: ViewGroup): Holder? {
+    override fun onCreateViewHolder(parent: ViewGroup): Holder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.slide_item, parent, false)
         return Holder(view)
