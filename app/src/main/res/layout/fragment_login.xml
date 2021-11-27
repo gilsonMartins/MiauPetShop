@@ -30,7 +30,7 @@
         android:layout_marginTop="@dimen/_10ssp"
         android:background="@drawable/botao_inverso"
         android:text="Criar conta"
-        android:textColor="@drawable/botao_vermelho"
+        android:textColor="@drawable/text_iverso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

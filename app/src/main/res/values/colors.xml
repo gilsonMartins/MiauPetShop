@@ -10,6 +10,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="tranparente">#00FFFFFF</color>
     <color name="divisorList">#808080</color>
-    <color name="vermelho">#FCF13737</color>
-    <color name="amarelo">#D39428</color>
+    <color name="vermelho">#Ff5959</color>
+    <color name="azul">#Ff5959</color>
+    <color name="marrom">#d6b1a2</color>
+    <color name="amarelo">#fff000</color>
 </resources>

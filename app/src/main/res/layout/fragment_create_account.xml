@@ -88,8 +88,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_50ssp"
-        android:layout_marginVertical="@dimen/_30ssp"
+        android:layout_marginVertical="@dimen/_10ssp"
+        android:background="@drawable/botao_inverso"
+        android:text="Criar conta"
+        android:textColor="@drawable/text_iverso" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButtonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_50ssp"
+        android:layout_marginVertical="@dimen/_5ssp"
+        android:layout_marginTop="@dimen/_1ssp"
         android:background="@drawable/background_buttom"
-        android:text="Cadastrar"
+        android:text="voltar"
         android:textColor="@drawable/botao_vermelho" />
 </androidx.appcompat.widget.LinearLayoutCompat>

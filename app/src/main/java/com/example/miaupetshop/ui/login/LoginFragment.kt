@@ -17,6 +17,9 @@ class LoginFragment : Fragment() {
        binding.appCompatButton.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_navigation_home_to_navigation_dashboard)
         }
+        binding.appCompatButton2.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_notifications)
+        }
     }
 
     override fun onCreateView(

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MiauPetShop</string>
     <string name="title_home">Menu</string>
-    <string name="title_notifications">Whatsapp</string>
+    <string name="title_notifications">Chat</string>
     <string name="title_dashboard">Favoritos</string>
     <string name="title_person">Perfil</string>
     <!-- TODO: Remove or change this placeholder text -->
