@@ -50,11 +50,57 @@ class HomeFragment : Fragment() {
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        homeViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         imgensAdapter()
         productsAdapter()
+        productPromoAdapter()
+        productFeatured()
+    }
+
+    private fun productFeatured() {
+        val list =
+            mutableListOf(
+                ProductsModel("R$50", "Cama Pet 35cm - Marrom", R.drawable.item_1),
+                ProductsModel("R$70", "Pote para ração", R.drawable.item_2),
+                ProductsModel("R$170", "Colar 5cm", R.drawable.item_3),
+                ProductsModel("R$170", "Caminha 38cm - Marrom", R.drawable.item_produto1),
+                ProductsModel("R$100", "Caminha 38cm - Azul", R.drawable.item_produto2),
+                ProductsModel("R$35,90", "Caminha 38cm - Rosa", R.drawable.item_produto3),
+                ProductsModel("R$170", "Caminha 38cm - Café", R.drawable.item_produto4))
+        val adapterList = ProductAdapter(list)
+        binding.recyclerView2.apply {
+            layoutManager =LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            adapter = adapterList
+
+        }
+        adapterList.itemClickListener(object : ItemClickListener{
+            override fun onItemClick(view: View, position: Int) {
+                Toast.makeText(requireContext(), "Deu certo", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    private fun productPromoAdapter() {
+        val list =
+            mutableListOf(
+                ProductPromoModel(R.drawable.servico_1),
+                ProductPromoModel( R.drawable.servico_2),
+                ProductPromoModel( R.drawable.servico_3))
+        val adapterList = ProductsPromoAdapter(list)
+        binding.recyclerView3.apply {
+            layoutManager =LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+            adapter = adapterList
+
+        }
+        adapterList.itemClickListener(object : ItemClickListener{
+            override fun onItemClick(view: View, position: Int) {
+                Toast.makeText(requireContext(), "Deu certo", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     private fun productsAdapter() {

@@ -18,7 +18,6 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:background="@drawable/background_card"
         app:layout_constraintEnd_toEndOf="@+id/imgProducts"
         app:layout_constraintStart_toStartOf="@+id/imgProducts"
@@ -26,14 +25,16 @@
 
         <TextView
             android:id="@+id/productName"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_70ssp"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingVertical="@dimen/_3ssp"
             android:layout_marginStart="@dimen/_9ssp"
             android:layout_marginTop="@dimen/_2ssp"
             android:fontFamily="@font/roboto_bold"
             android:text="Cama Pet"
             android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,8 +45,10 @@
             android:layout_marginBottom="@dimen/_3ssp"
             android:text="R$50,00"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnAdd"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/productName"
             app:layout_constraintTop_toBottomOf="@+id/productName" />
 
@@ -68,7 +71,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="@dimen/_15ssp"
         android:background="@color/divisorList"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProducts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProducts"
         app:layout_constraintTop_toTopOf="@+id/imgProducts"

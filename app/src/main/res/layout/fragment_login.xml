@@ -7,17 +7,20 @@
     android:background="@drawable/background"
     tools:context=".ui.login.LoginFragment">
 
-    <androidx.appcompat.widget.AppCompatTextView
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_70ssp"
         android:layout_marginBottom="@dimen/_30ssp"
-        android:fontFamily="@font/crafty_girls"
         android:gravity="center"
-        android:text="Miau PetShop"
+        android:src="@drawable/logo"
         android:textSize="@dimen/_24ssp"
         app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton2"
