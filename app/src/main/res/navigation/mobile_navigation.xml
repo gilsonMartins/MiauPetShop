@@ -2,39 +2,46 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_home">
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/navigation_homes">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.miaupetshop.ui.login.LoginFragment"
-        android:label="@string/login"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/navigation_homes"
+        android:name="com.example.miaupetshop.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+         <action
+            android:id="@+id/action_navigation_homes_to_navigation_notifications"
+            app:destination="@id/navigation_person" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_notifications"
-            app:destination="@id/navigation_createAccount" />
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            android:id="@+id/action_navigation_homes_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.miaupetshop.ui.MainFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_main" >
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.miaupetshop.ui.notifications.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite_list" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_navigation_dashboard_to_navigation_notifications"
+            app:destination="@id/navigation_person" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_homes"
+            app:destination="@id/navigation_homes" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_createAccount"
-        android:name="com.example.miaupetshop.ui.account.CreateAccountFragment"
+        android:id="@+id/navigation_person"
+        android:name="com.example.miaupetshop.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" >
+
         <action
-            android:id="@+id/action_navigation_notifications_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_navigation_notifications_to_navigation_homes"
+            app:destination="@id/navigation_homes" />
+        <action
+            android:id="@+id/action_navigation_notifications_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
     </fragment>
 </navigation>

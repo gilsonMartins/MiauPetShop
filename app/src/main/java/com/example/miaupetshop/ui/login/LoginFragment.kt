@@ -14,12 +14,12 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       binding.appCompatButton.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_dashboard)
-        }
-        binding.appCompatButton2.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_notifications)
-        }
+//       binding.appCompatButton.setOnClickListener { view ->
+//            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_dashboard)
+//        }
+//        binding.appCompatButton2.setOnClickListener { view ->
+//            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_notifications)
+//        }
     }
 
     override fun onCreateView(

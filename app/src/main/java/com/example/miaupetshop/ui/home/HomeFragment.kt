@@ -107,8 +107,8 @@ class HomeFragment : Fragment() {
         val list =
             mutableListOf(
                 ProductsModel("R$50", "Latinha", R.drawable.item_1),
-                ProductsModel("R$70", "Latinha", R.drawable.item_2),
-                ProductsModel("R$70", "Latinha", R.drawable.item_3))
+                ProductsModel("R$70", "Vasilha", R.drawable.item_2),
+                ProductsModel("R$30", "Coleira", R.drawable.item_3))
         val adapterList = ProductAdapter(list)
         binding.recyclerView.apply {
             layoutManager =LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)

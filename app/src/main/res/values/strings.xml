@@ -2,10 +2,11 @@
     <string name="app_name">MiauPetShop</string>
     <string name="title_home">Menu</string>
     <string name="title_notifications">Chat</string>
-    <string name="title_dashboard">Favoritos</string>
+    <string name="title_favorite">Favoritos</string>
     <string name="title_person">Perfil</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label">Escolha uma opção</string>
 </resources>

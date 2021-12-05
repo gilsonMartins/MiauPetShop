@@ -10,20 +10,17 @@ import androidx.navigation.NavGraph
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.miaupetshop.ui.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-       val intent = Intent(this, MainActivity::class.java)
+       val intent = Intent(this, LoginActivity::class.java)
         Handler().postDelayed({
             startActivity(intent)
             finish()
         }, 3000)
         supportActionBar?.hide()
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 }
