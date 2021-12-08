@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/navigation_person"
         android:name="com.example.miaupetshop.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_bag"
         tools:layout="@layout/fragment_notifications" >
 
         <action

@@ -7,17 +7,21 @@
     android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.account.CreateAccountFragment">
+    tools:context=".ui.account.CreateAccountActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20ssp"
+        app:errorEnabled="true"
         android:layout_marginHorizontal="@dimen/_50ssp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
+            android:inputType="textCapSentences"
             android:layout_height="match_parent"
             android:hint="Nome" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -26,14 +30,18 @@
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
+        app:errorContentDescription="Telefone não pode ser vazio"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_50ssp"
-        android:layout_marginVertical="@dimen/_15ssp"
+        app:errorEnabled="true"
+        android:layout_marginBottom="@dimen/_20ssp"
         android:background="@drawable/background_input_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:hint="Telefone" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,41 +50,37 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20ssp"
         android:layout_marginHorizontal="@dimen/_50ssp"
         android:background="@drawable/background_input_text"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="65dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="textEmailAddress"
             android:hint="E-mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPhone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_50ssp"
-        android:layout_marginVertical="@dimen/_15ssp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Contato" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/textInputLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20ssp"
         android:layout_marginHorizontal="@dimen/_50ssp"
+        app:errorContentDescription="Senha não pode ser vazio"
+        app:errorEnabled="true"
         android:background="@drawable/background_input_text"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha"
@@ -88,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_50ssp"
-        android:layout_marginVertical="@dimen/_10ssp"
+        android:layout_marginVertical="@dimen/_20ssp"
         android:background="@drawable/botao_inverso"
         android:text="Criar conta"
         android:textColor="@drawable/text_iverso" />
@@ -98,7 +102,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_50ssp"
-        android:layout_marginVertical="@dimen/_5ssp"
         android:layout_marginTop="@dimen/_1ssp"
         android:background="@drawable/background_buttom"
         android:text="voltar"

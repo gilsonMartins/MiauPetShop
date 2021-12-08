@@ -17,10 +17,10 @@
         android:title="@string/title_favorite" />
 
     <item
-        android:id="@+id/navigation_whatsapp"
-        android:contentDescription="@string/title_notifications"
-        android:icon="@drawable/ic_baseline_chat_bubble_24"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_Bag"
+        android:contentDescription="@string/title_bag"
+        android:icon="@drawable/ic_baseline_shopping_bag"
+        android:title="@string/title_bag" />
   <item
       android:id="@+id/navigation_person"
         android:icon="@drawable/ic_baseline_person_24"

@@ -106,7 +106,7 @@ class HomeFragment : Fragment() {
     private fun productsAdapter() {
         val list =
             mutableListOf(
-                ProductsModel("R$50", "Latinha", R.drawable.item_1),
+                ProductsModel("R$50", "Camminha", R.drawable.item_1),
                 ProductsModel("R$70", "Vasilha", R.drawable.item_2),
                 ProductsModel("R$30", "Coleira", R.drawable.item_3))
         val adapterList = ProductAdapter(list)

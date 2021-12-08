@@ -1,21 +1,17 @@
 package com.example.miaupetshop
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.miaupetshop.databinding.ActivityMainBinding
-import com.example.miaupetshop.ui.dashboard.DashboardFragment
 import com.example.miaupetshop.ui.home.HomeFragment
+import com.example.miaupetshop.ui.login.LoginActivity
 import com.example.miaupetshop.ui.notifications.FavoriteFragment
 import com.example.miaupetshop.ui.notifications.NotificationsFragment
 import com.example.miaupetshop.ui.person.PersonFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.nav_host_fragment_main, FavoriteFragment()).commit()
                 }
-                R.id.navigation_whatsapp ->
+                R.id.navigation_Bag ->
                     supportFragmentManager.beginTransaction()
                     .replace(R.id.nav_host_fragment_main, NotificationsFragment()).commit()
                R.id.navigation_person ->
@@ -49,5 +45,18 @@ class MainActivity : AppCompatActivity() {
 
             return@OnNavigationItemSelectedListener true
         })
+    }
+
+    override fun onBackPressed() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Deseja sair do aplicativo?")
+            .setPositiveButton("sim") { _, _ ->
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }.setNegativeButton("Não") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }
