@@ -48,12 +48,16 @@ class CreateAccountActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        mViewModel.saveGuest.observe(this, Observer {
-            if (it) {
-                Toast.makeText(this, "Conta criada", Toast.LENGTH_SHORT).show()
+        mViewModel.create.observe(this, Observer {
+            if (it.success()) {
+                savePreferences("nome", binding.name.text.toString())
+                savePreferences("email", binding.email.text.toString())
+                savePreferences("phone", binding.password.text.toString())
+                savePreferencesPhone("telefone", binding.phone.text.toString().toInt())
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             } else {
-                Toast.makeText(this, "Não foi possível", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, it.failure(), Toast.LENGTH_SHORT).show()
             }
         })
     }
