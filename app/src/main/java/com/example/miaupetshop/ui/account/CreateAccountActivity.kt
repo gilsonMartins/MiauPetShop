@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.miaupetshop.R
 import com.example.miaupetshop.databinding.ActivityCreateAccountBinding
 import com.example.miaupetshop.ui.login.LoginActivity
@@ -16,11 +18,13 @@ import com.google.android.material.textfield.TextInputLayout
 
 class CreateAccountActivity : AppCompatActivity() {
 
+    private lateinit var mViewModel: GuestViewModel
     private lateinit var binding: ActivityCreateAccountBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mViewModel = ViewModelProvider(this).get(GuestViewModel::class.java)
         val sharedPrefLogin = this.getSharedPreferences("Login", Context.MODE_PRIVATE)
         val email = sharedPrefLogin.getString("email", "")
         binding.appCompatButtonCreate.setOnClickListener { view ->
@@ -30,15 +34,13 @@ class CreateAccountActivity : AppCompatActivity() {
                 !binding.email.text.isNullOrEmpty() &&
                 !binding.password.text.isNullOrEmpty()
             ) {
-                if (email!!.contains("")){
-                    savePreferences("nome", binding.name.text.toString())
-                    savePreferences("email", binding.email.text.toString())
-                    savePreferences("phone", binding.password.text.toString())
-                    savePreferencesPhone("telefone", binding.phone.text.toString().toInt())
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
+                mViewModel.save(
+                    binding.name.text.toString(),
+                    binding.email.text.toString(),
+                    binding.password.text.toString(),
+                    binding.phone.text.toString().toInt(),
+                    view.id
+                )
             }
         }
         binding.appCompatButtonBack.setOnClickListener { view ->
@@ -46,6 +48,14 @@ class CreateAccountActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        mViewModel.saveGuest.observe(this, Observer {
+            if (it) {
+                Toast.makeText(this, "Conta criada", Toast.LENGTH_SHORT).show()
+                finish()
+            } else {
+                Toast.makeText(this, "Não foi possível", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onBackPressed() {
@@ -60,6 +70,7 @@ class CreateAccountActivity : AppCompatActivity() {
             }
             .show()
     }
+
     private fun retorno() {
         validate(binding.textInputLayoutPassword, binding.password)
         validate(binding.textInputLayoutEmail, binding.email)
@@ -83,6 +94,7 @@ class CreateAccountActivity : AppCompatActivity() {
             .putString(preferencesString, valor)
             .apply()
     }
+
     fun savePreferencesPhone(preferencesString: String, int: Int) {
         this.getSharedPreferences(
             "Phone", Context.MODE_PRIVATE,
