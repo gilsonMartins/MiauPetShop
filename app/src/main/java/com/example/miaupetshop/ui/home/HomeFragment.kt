@@ -1,25 +1,25 @@
 package com.example.miaupetshop.ui.home
 
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miaupetshop.R
 import com.example.miaupetshop.databinding.FragmentHomeBinding
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.google.gson.Gson
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 
 class HomeFragment : Fragment() {
+
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
@@ -77,7 +77,9 @@ class HomeFragment : Fragment() {
         }
         adapterList.itemClickListener(object : ItemClickListener{
             override fun onItemClick(view: View, position: Int) {
-                Toast.makeText(requireContext(), "Deu certo", Toast.LENGTH_SHORT).show()
+                val prod = adapterList.getItemInIndex(position)
+                val bundle = bundleOf("produtoSelecionado" to Gson().toJson(prod))
+                findNavController().navigate(R.id.action_navigation_homes_to_navigation_notifications, bundle)
             }
 
         })
@@ -97,7 +99,7 @@ class HomeFragment : Fragment() {
         }
         adapterList.itemClickListener(object : ItemClickListener{
             override fun onItemClick(view: View, position: Int) {
-                Toast.makeText(requireContext(), "Deu certo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Verifique a loja mais próxima", Toast.LENGTH_SHORT).show()
             }
 
         })
@@ -117,7 +119,10 @@ class HomeFragment : Fragment() {
         }
         adapterList.itemClickListener(object : ItemClickListener{
             override fun onItemClick(view: View, position: Int) {
-                Toast.makeText(requireContext(), "Deu certo", Toast.LENGTH_SHORT).show()
+                val prod = adapterList.getItemInIndex(position)
+                val bundle = bundleOf("produtoSelecionado" to Gson().toJson(prod))
+                findNavController().navigate(R.id.action_navigation_homes_to_navigation_notifications, bundle)
+
             }
 
         })

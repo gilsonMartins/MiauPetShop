@@ -1,9 +1,9 @@
 package com.example.miaupetshop.ui.home
 
-import android.widget.ImageView
+import com.google.gson.annotations.SerializedName
 
-class ProductsModel(
-   val value: String,
-    val name: String,
+data class ProductsModel(
+    val value: String,
+    val name: String?,
     val imageView: Int
 )

@@ -1,18 +1,19 @@
-package com.example.miaupetshop.ui.home
+package com.example.miaupetshop.ui.notifications
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miaupetshop.R
-import com.smarteist.autoimageslider.SliderViewAdapter
+import com.example.miaupetshop.ui.home.ItemClickListener
+import com.example.miaupetshop.ui.home.ProductAdapter
+import com.example.miaupetshop.ui.home.ProductsModel
 
-class ProductAdapter(private var products: MutableList<ProductsModel>) :
-    RecyclerView.Adapter<ProductAdapter.Holder>() {
+class SacolaAdapter(private var products: MutableList<ProductsModel>) :
+    RecyclerView.Adapter<SacolaAdapter.Holder>() {
 
     private var itemClickListener: ItemClickListener? = null
 
